@@ -1,0 +1,301 @@
+:root{
+    --100: white;
+    --1000: #111;
+    --200: whitesmoke;
+    --800: #3d3d3d;
+    --900: #1f1f1f;
+    --green: #0da34e;
+    --600: #a3a3a3;
+    --700: #666;
+    --400: gainsboro;
+    --yellow: #fccf55;
+    --violet: #4f5bff;
+    --rose: #fbcbf5;
+}
+
+*,a{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Satoshi', sans-serif;
+    text-decoration: none;
+}  
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-wrap{
+    position: fixed;
+    top: 0;
+    transition: all 500ms ease;
+    height: fit-content; 
+    background-color: var(--1000);
+    width: 100%;
+    padding: 0 5rem;
+    z-index: 9999;
+}
+
+.bottom{
+    overflow: hidden;
+    display: flex;
+    height: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--400);
+    transition: height 400ms ease-out;
+}
+
+
+
+.nav-wrap:hover .bottom{ 
+    height: 10rem;
+}
+
+.nav-content{
+    padding: 1.3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.nav-content h2{
+    font-weight: 900;
+    font-size: 1.4rem;
+}
+
+.menu-items{ 
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.menu-items a{
+    font-size: .775rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    text-decoration: none;
+}
+
+
+.lets-talk{
+    height: 3rem;
+    width: 8rem;
+    z-index: 999;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: .5rem;
+    text-decoration: none;
+    border-radius: 2rem;
+}
+
+.lets-talk .btn-text{
+    text-align: end;
+    position: relative;
+    z-index: 999;
+    font-weight: 700;
+    letter-spacing: -1px;
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+.lets-talk::after{
+    content: "";
+    position: absolute;
+    background-color: #0da34e;
+    height: 100%;
+    width: 100%;
+    border-radius: 2rem;
+    transition: width 500ms ease-in;
+    right: 0;
+    top: 0;
+}
+
+.lets-talk:hover::after{
+    width: 0%;
+}
+
+.lets-talk .svg svg{
+    padding: .2rem;
+    height: 1.4rem;
+    width: 1.4rem;
+}
+
+.lets-talk .svg{
+    z-index: 99;
+    display: grid;
+    place-content: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: var(--green);
+}
+
+
+
+.lets-talk:hover .btn-full{
+    width: 0;
+}
+
+.page1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--1000);
+} 
+
+.page1 .title{
+    margin-top: 10rem; 
+} 
+
+
+.page1 h1{
+    font-weight: 900;
+    line-height: 1;
+    font-size: 8rem;
+    letter-spacing: -4px;
+}
+
+.page1 h1 span svg path{
+    transform-origin: center;
+    transition: transform 400ms ease, scale 300ms ease;
+}
+
+.page1 h1 span svg{
+    cursor: pointer;
+    overflow: hidden;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-color: var(--green);
+    transition: scale 400ms ease;
+}
+
+
+
+.page1 h1 span svg:hover path{
+    transform-origin: center;
+    transform: rotate(-20deg) scale(1.2);
+    
+}
+
+.page1 h1 span svg:hover {
+    scale: .8;
+}
+
+.description{
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.description .tags{
+    margin-top: .2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
+}
+.description .tags p,
+.description p,
+.description .tags span{
+    color: var(--200);
+    font-weight: 500;
+    letter-spacing: -1px;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+.description .tags p{
+    border: 1px solid var(--700);
+    border-radius: 2rem;
+    padding: .5rem .5rem;
+}
+
+.page2{
+    height: 100vh;
+    background: var(--1000);
+}
+
+
+.marquee-wrapper{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 4rem;
+    background-color: var(--1000);
+}
+
+.marquee{
+    position: relative;
+    overflow: hidden;
+    width: 50%;
+    padding: 1.5rem;
+    white-space: nowrap;
+}
+
+.marquee::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 8rem;
+    z-index: 99;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--1000));
+}
+.marquee::after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    width: 8rem;
+    z-index: 99;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--1000));
+}
+
+
+
+
+.marquee .move{
+    display: inline-block;
+    animation-name: marquee;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.marquee .move img{
+    height: 1.3rem;
+    padding-left: 1.5rem;
+}
+
+
+@keyframes marquee {
+    100%{
+        transform: translateX(calc(-100% - .5rem));
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
