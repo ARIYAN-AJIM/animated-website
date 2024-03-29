@@ -220,16 +220,48 @@ html,body{
 }
 
 .page2{
-    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    height: 100dvh;
     background: var(--1000);
+    padding: 0 5rem;
 }
 
+.page2 .section{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    height: 100%;
+    width: 100%;
+}
+
+.page2 .section .left-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    height: 50%;
+}
+
+.section .right-section{
+    width: 50%;
+    height: 50%;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.section .right-section video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
 .marquee-wrapper{
     align-items: center;
     display: flex;
     justify-content: center;
-    padding-top: 4rem;
+    padding: 5rem;
     background-color: var(--1000);
 }
 
@@ -299,3 +331,8 @@ html,body{
 
 
 
+.page3{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--1000);
+}
